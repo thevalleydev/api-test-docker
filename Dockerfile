@@ -6,7 +6,7 @@ RUN bash -c "composer install"
 
 FROM php:8.2-cli
 
-COPY . /var/www/test-docker-php
+COPY ./public /var/www/test-docker-php/public
 COPY --from=build ./app/vendor /var/www/test-docker-php/vendor
 
 WORKDIR /var/www/test-docker-php/public/
